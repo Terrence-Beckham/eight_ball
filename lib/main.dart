@@ -22,7 +22,27 @@ class _MyAppState extends State<MyApp> {
         appBar: AppBar(
           title: const Text('Ask Me Anything'),
         ),
+        body: const BallPage(),
       ),
+    );
+  }
+}
+
+class BallPage extends StatefulWidget {
+  const BallPage({Key? key}) : super(key: key);
+
+  @override
+  State<BallPage> createState() => _BallPageState();
+}
+
+class _BallPageState extends State<BallPage> {
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Image.asset('images/ball1.png'),
+      ],
     );
   }
 }
