@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -41,7 +42,14 @@ class _BallPageState extends State<BallPage> {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Image.asset('images/ball1.png'),
+        TextButton(
+          child: Image.asset('images/ball1.png'),
+          onPressed: () {
+            if (kDebugMode) {
+              print('I have been pressed');
+            }
+          },
+        ),
       ],
     );
   }
