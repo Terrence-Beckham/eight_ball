@@ -1,5 +1,5 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'dart:math';
 
 void main() {
   runApp(const MyApp());
@@ -37,17 +37,21 @@ class BallPage extends StatefulWidget {
 }
 
 class _BallPageState extends State<BallPage> {
+  var ballNumber = 1;
+
   @override
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         TextButton(
-          child: Image.asset('images/ball1.png'),
+          child: Image.asset('images/ball$ballNumber.png'),
           onPressed: () {
-            if (kDebugMode) {
-              print('I have been pressed');
-            }
+            setState(
+              () {
+                ballNumber = Random().nextInt(5) + 1;
+              },
+            );
           },
         ),
       ],
